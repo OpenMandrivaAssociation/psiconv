@@ -11,7 +11,6 @@ Source0: http://software.frodo.looijaard.name/psiconv/files/%{name}-%{version}.t
 License: GPL
 Group: File tools
 Url: http://software.frodo.looijaard.name/psiconv/
-BuildRoot: %{_tmppath}/%{name}-%{version}-%{release}-buildroot
 BuildRequires: ImageMagick-devel
 BuildRequires: bc
 
