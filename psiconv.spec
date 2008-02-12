@@ -16,7 +16,6 @@ BuildRequires: ImageMagick-devel
 BuildRequires: bc
 
 %description
-
 The Psion 5 has several built-in applications. They use their own file
 formats to save data files. Psion has written file conversion
 utilities for Windows 95, in the form of their PsiWin program. But
