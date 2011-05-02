@@ -1,7 +1,7 @@
 %define name psiconv
 %define version 0.9.8
 %define release %mkrel 16
-%define libname %mklibname %name 6
+%define libname %mklibname %name 7
 
 Summary: PSION 5(MX) file format data conversion utilities
 Name: %{name}
@@ -59,14 +59,20 @@ Install this if you want to compile an application that uses psiconv
 to convert PSION files.
 
 %prep
+
 %setup -q
+
 %build
 %configure2_5x
 %make
+
 %install
 rm -rf $RPM_BUILD_ROOT
+
 %makeinstall_std
+
 %multiarch_binaries %buildroot%_bindir/psiconv-config
+
 rm -rf %buildroot%_datadir/psiconv/xhtml
 
 %clean
@@ -75,6 +81,7 @@ rm -rf $RPM_BUILD_ROOT
 %if %mdkversion < 200900
 %post -n %libname -p /sbin/ldconfig
 %endif
+
 %if %mdkversion < 200900
 %postun -n %libname -p /sbin/ldconfig
 %endif
@@ -99,7 +106,5 @@ rm -rf $RPM_BUILD_ROOT
 %_libdir/libpsiconv.a
 %_includedir/%name
 %_bindir/psiconv-config
-%_bindir/*/psiconv-config
+%{multiarch_bindir}/psiconv-config
 %_mandir/man1/psiconv-config.1*
-
-
