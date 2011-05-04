@@ -1,6 +1,6 @@
 %define name psiconv
 %define version 0.9.8
-%define release %mkrel 16
+%define release %mkrel 17
 %define libname %mklibname %name 7
 
 Summary: PSION 5(MX) file format data conversion utilities
