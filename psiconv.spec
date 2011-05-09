@@ -1,8 +1,9 @@
 %define name psiconv
 %define version 0.9.8
-%define release %mkrel 18
+%define release %mkrel 19
 %define major 6
 %define libname %mklibname %name %major
+%define develname %mklibname -d %name
 
 Summary: PSION 5(MX) file format data conversion utilities
 Name: %{name}
@@ -41,13 +42,14 @@ I have gathered through the newsgroups and from other sources.
 This contains a shared library that can be used by programs to convert
 PSION files.
 
-%package -n %libname-devel
+%package -n %develname
 Group: Development/C
 Summary: PSION 5(MX) file format data conversion library
 Requires: %libname = %version
+Obsoletes: %{mklibname -d psiconv 6}
 Provides: libpsiconv-devel = %version-%release
 
-%description -n %libname-devel
+%description -n %develname
 The Psion 5 has several built-in applications. They use their own file
 formats to save data files. Psion has written file conversion
 utilities for Windows 95, in the form of their PsiWin program. But
@@ -92,7 +94,7 @@ rm -rf $RPM_BUILD_ROOT
 %defattr(-,root,root)
 %_libdir/libpsiconv.so.%{major}*
 
-%files -n %libname-devel
+%files -n %develname
 %defattr(-,root,root)
 %_libdir/libpsiconv.so
 %attr(644,root,root) %_libdir/libpsiconv.la
