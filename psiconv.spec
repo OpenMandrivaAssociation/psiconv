@@ -1,7 +1,8 @@
 %define name psiconv
 %define version 0.9.8
-%define release %mkrel 17
-%define libname %mklibname %name 7
+%define release %mkrel 18
+%define major 6
+%define libname %mklibname %name %major
 
 Summary: PSION 5(MX) file format data conversion utilities
 Name: %{name}
@@ -78,14 +79,6 @@ rm -rf %buildroot%_datadir/psiconv/xhtml
 %clean
 rm -rf $RPM_BUILD_ROOT
 
-%if %mdkversion < 200900
-%post -n %libname -p /sbin/ldconfig
-%endif
-
-%if %mdkversion < 200900
-%postun -n %libname -p /sbin/ldconfig
-%endif
-
 %files
 %defattr(-,root,root)
 %doc TODO README NEWS AUTHORS ChangeLog
@@ -97,7 +90,7 @@ rm -rf $RPM_BUILD_ROOT
 
 %files -n %libname
 %defattr(-,root,root)
-%_libdir/libpsiconv.so.*
+%_libdir/libpsiconv.so.%{major}*
 
 %files -n %libname-devel
 %defattr(-,root,root)
