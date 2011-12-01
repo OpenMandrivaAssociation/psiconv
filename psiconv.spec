@@ -70,7 +70,7 @@ to convert PSION files.
 %make
 
 %install
-rm -rf $RPM_BUILD_ROOT
+rm -rf %{buildroot}
 
 %makeinstall_std
 
@@ -79,7 +79,7 @@ rm -rf $RPM_BUILD_ROOT
 rm -rf %buildroot%_datadir/psiconv/xhtml
 
 %clean
-rm -rf $RPM_BUILD_ROOT
+rm -rf %{buildroot}
 
 %files
 %defattr(-,root,root)
