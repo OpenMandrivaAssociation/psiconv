@@ -5,7 +5,7 @@
 Summary:	PSION 5(MX) file format data conversion utilities
 Name:		psiconv
 Version:	0.9.8
-Release:	24
+Release:	25
 License:	GPLv2
 Group:		File tools
 Url:		http://software.frodo.looijaard.name/psiconv/
