@@ -6,12 +6,12 @@
 
 Summary:	PSION 5(MX) file format data conversion utilities
 Name:		psiconv
-Version:	0.9.8
-Release:	30
+Version:	0.9.9
+Release:	1
 License:	GPLv2
 Group:		File tools
 Url:		http://software.frodo.looijaard.name/psiconv/
-Source0:	http://software.frodo.looijaard.name/psiconv/files/%{name}-%{version}.tar.bz2
+Source0:	http://www.frodo.looijaard.name/system/files/software/psiconv/psiconv-%{version}.tar.gz
 BuildRequires:	bc
 BuildRequires:	pkgconfig(ImageMagick)
 
@@ -52,8 +52,6 @@ This package includes the development files for %{name}.
 %install
 %makeinstall_std
 
-%multiarch_binaries %{buildroot}%{_bindir}/psiconv-config
-
 rm -rf %{buildroot}%{_datadir}/psiconv/xhtml
 
 %files
@@ -62,6 +60,7 @@ rm -rf %{buildroot}%{_datadir}/psiconv/xhtml
 %config(noreplace) %{_sysconfdir}/psiconv/*
 %{_bindir}/%{name}
 %{_mandir}/man1/%{name}.1*
+%{_mandir}/man5/%{name}.conf.5*
 %{_datadir}/%{name}
 
 %files -n %{libname}
@@ -71,6 +70,4 @@ rm -rf %{buildroot}%{_datadir}/psiconv/xhtml
 %{_libdir}/libpsiconv.so
 %{_includedir}/%{name}
 %{_bindir}/psiconv-config
-%{multiarch_bindir}/psiconv-config
 %{_mandir}/man1/psiconv-config.1*
-
