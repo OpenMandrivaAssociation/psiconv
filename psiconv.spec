@@ -10,7 +10,7 @@ Version:	0.9.9
 Release:	4
 License:	GPLv2
 Group:		File tools
-Url:		http://software.frodo.looijaard.name/psiconv/
+Url:		https://software.frodo.looijaard.name/psiconv/
 Source0:	http://www.frodo.looijaard.name/system/files/software/psiconv/psiconv-%{version}.tar.gz
 BuildRequires:	bc
 BuildRequires:	pkgconfig(ImageMagick)
