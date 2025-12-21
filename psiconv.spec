@@ -12,6 +12,11 @@ License:	GPLv2
 Group:		File tools
 Url:		https://software.frodo.looijaard.name/psiconv/
 Source0:	http://www.frodo.looijaard.name/system/files/software/psiconv/psiconv-%{version}.tar.gz
+BuildRequires:	autoconf
+BuildRequires:	automake
+BuildRequires:	libtool-base
+BuildRequires:	slibtool
+BuildRequires:	make
 BuildRequires:	bc
 BuildRequires:	pkgconfig(ImageMagick)
 
